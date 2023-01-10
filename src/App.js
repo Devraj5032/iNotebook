@@ -1,21 +1,28 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import NavBar from "./components/NavBar";
+import About from "./components/About";
+import Home from "./components/Home";
+import NoteState from "./context/notes/NoteState";
+import Alert from "./components/Alert";
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
-  }
-}
+const App = () => {
+  return (
+    <>
+      <NoteState>
+        <Router>
+          <NavBar />
+          <Alert message="This is amazing react course."/>
+          <div className="container">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
+            </Routes>
+          </div>
+        </Router>
+      </NoteState>
+    </>
+  );
+};
 
 export default App;
