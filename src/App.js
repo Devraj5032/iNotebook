@@ -5,6 +5,8 @@ import About from "./components/About";
 import Home from "./components/Home";
 import NoteState from "./context/notes/NoteState";
 import Alert from "./components/Alert";
+import Login from './components/Login'
+import Signup from './components/Signup'
 
 const App = () => {
   return (
@@ -17,6 +19,8 @@ const App = () => {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/signup" element={<Signup />} />
             </Routes>
           </div>
         </Router>
@@ -26,3 +30,5 @@ const App = () => {
 };
 
 export default App;
+
+// 69 video 4:40
