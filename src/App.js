@@ -30,5 +30,3 @@ const App = () => {
 };
 
 export default App;
-
-// 69 video 4:40

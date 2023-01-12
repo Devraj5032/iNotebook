@@ -43,11 +43,11 @@ const NavBar = () => {
                 placeholder="Search"
                 aria-label="Search"
               />
-              <Link className="btn btn-primary mx-2" to='/login' role='button'>
-                Log In
+              <Link className="btn btn-primary mx-1" to='/login' role='button'>
+                Login
               </Link>
               <Link className="btn btn-primary mx-2" to='/signup' role='button'>
-                Sign Up
+                Signup
               </Link>
             </form>
           </div>
