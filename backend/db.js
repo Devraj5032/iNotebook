@@ -1,5 +1,6 @@
 const mongoose = require('mongoose')
-const mongoURI = "mongodb+srv://devraj:3008200210@cluster0.hrlkdjt.mongodb.net/test"
+require('dotenv').config()
+const mongoURI = `mongodb+srv://devraj:${process.env.db_pass}@cluster0.hrlkdjt.mongodb.net/test`
 
 const connectToMongo = () => {
     mongoose.connect(mongoURI , () => {
