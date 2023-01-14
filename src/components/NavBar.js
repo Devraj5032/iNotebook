@@ -1,9 +1,15 @@
 import React, { useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const NavBar = () => {
 
   let location = useLocation();
+  const navigate = useNavigate()
+
+  const handleLogout = () => {
+    localStorage.removeItem('token')
+    navigate('/login')
+  }
 
   return (
     <div>
@@ -43,12 +49,14 @@ const NavBar = () => {
                 placeholder="Search"
                 aria-label="Search"
               />
-              <Link className="btn btn-primary mx-1" to='/login' role='button'>
+              {!localStorage.getItem('token') ? <><Link className="btn btn-primary mx-1" to='/login' role='button'>
                 Login
               </Link>
               <Link className="btn btn-primary mx-2" to='/signup' role='button'>
                 Signup
-              </Link>
+              </Link> </>: <button className="btn btn-primary mx-2" onClick={handleLogout}>
+                Logout
+              </button>}
             </form>
           </div>
         </div>
